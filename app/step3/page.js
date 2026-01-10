@@ -1,6 +1,7 @@
 "use client"
 import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import AdBanner from '../../components/AdBanner'
 
 function Step3Content() {
   const searchParams = useSearchParams()
@@ -8,22 +9,18 @@ function Step3Content() {
   const finalLink = typeof window !== 'undefined' && d ? atob(d) : '#'
 
   return (
-    <div className="max-w-3xl mx-auto text-center">
-      <div className="w-full h-80 bg-gray-100 mb-10 flex items-center justify-center border-4 border-double">
-        <span className="text-gray-400 font-bold text-2xl">FINAL AD SPACE (300x600)</span>
-      </div>
-      <h2 className="text-4xl font-black text-gray-900 mb-4">Ready to Go!</h2>
-      <p className="text-gray-500 mb-8">Thank you for using our service.</p>
+    <div className="max-w-2xl mx-auto text-center bg-white p-10 rounded-3xl shadow-xl border">
+      <AdBanner />
+      <h2 className="text-3xl font-black mb-8">Link is ready!</h2>
       <a 
         href={finalLink}
-        className="inline-block bg-green-600 text-white px-20 py-6 rounded-full text-2xl font-bold shadow-2xl hover:bg-green-700 hover:scale-105 transition-all"
+        className="inline-block bg-blue-600 text-white px-16 py-6 rounded-full text-2xl font-bold hover:scale-105 transition-all"
       >
-        GET YOUR LINK
+        REDIRECT NOW
       </a>
+      <div className="mt-10"><AdBanner /></div>
     </div>
   )
 }
 
-export default function Step3() {
-  return <Suspense><Step3Content /></Suspense>
-}
+export default function Step3() { return <Suspense><Step3Content /></Suspense> }
