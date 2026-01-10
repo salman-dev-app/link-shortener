@@ -1,8 +1,8 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-export default function Step1() {
+function Step1Content() {
   const [num, setNum] = useState({ a: 0, b: 0 })
   const [ans, setAns] = useState('')
   const router = useRouter()
@@ -38,4 +38,12 @@ export default function Step1() {
       <button onClick={check} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold">Continue</button>
     </div>
   )
-  }
+}
+
+export default function Step1() {
+  return (
+    <Suspense fallback={<div className="text-center p-10 font-bold">Loading Security Check...</div>}>
+      <Step1Content />
+    </Suspense>
+  )
+}
