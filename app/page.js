@@ -7,14 +7,14 @@ export default function Home() {
 
   const handleShorten = (e) => {
     e.preventDefault()
-    const encoded = btoa(url) // Basic encoding for demo
+    const encoded = btoa(url) 
     setResult(`${window.location.origin}/step1?d=${encoded}`)
   }
 
   return (
     <div className="max-w-4xl mx-auto text-center">
-      <h2 className="text-5xl font-extrabold text-gray-900 mb-6">Shorten Links. Share Anywhere.</h2>
-      <p className="text-xl text-gray-600 mb-10">Professional grade URL management with advanced tracking.</p>
+      <h2 className="text-5xl font-extrabold text-gray-900 mb-6">Shorten Links, Earn Money.</h2>
+      <p className="text-xl text-gray-600 mb-10">The most reliable and high-paying link shortener in the world.</p>
       
       <form onSubmit={handleShorten} className="bg-white p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 border border-gray-100">
         <input 
@@ -28,26 +28,15 @@ export default function Home() {
       </form>
 
       {result && (
-        <div className="mt-8 p-6 bg-blue-50 border-2 border-blue-200 rounded-2xl animate-bounce">
-          <p className="font-bold text-blue-800 mb-2">Your Short Link:</p>
+        <div className="mt-8 p-6 bg-green-50 border-2 border-green-200 rounded-2xl">
+          <p className="font-bold text-green-800 mb-2">Your Professional Link:</p>
           <code className="text-xl text-blue-600 break-all">{result}</code>
         </div>
       )}
 
-      <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-        <div className="p-6 bg-white rounded-xl shadow-sm border">
-          <h4 className="font-bold mb-2">Fast Redirects</h4>
-          <p className="text-gray-500 text-sm">Our servers ensure 99.9% uptime and lightning speed.</p>
-        </div>
-        <div className="p-6 bg-white rounded-xl shadow-sm border">
-          <h4 className="font-bold mb-2">Secure Cloud</h4>
-          <p className="text-gray-500 text-sm">All links are scanned for malware and phishing.</p>
-        </div>
-        <div className="p-6 bg-white rounded-xl shadow-sm border">
-          <h4 className="font-bold mb-2">Analytics</h4>
-          <p className="text-gray-500 text-sm">Track every click with our advanced dashboard.</p>
-        </div>
+      <div className="mt-20 h-40 bg-gray-100 border-2 border-dashed flex items-center justify-center text-gray-400 font-bold">
+        ADVERTISEMENT BANNER (728x90)
       </div>
     </div>
   )
-    }
+}
